@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=poppins:wght@200,300,400,500,600,700,800,900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #1d1729;
+}
+
+.container
+{
+	position: relative;
+	width: 1000px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+
+}
+
+.card
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+}
+
+.card:nth-child(even)
+{
+	flex-direction: column-reverse;
+}
+
+.card .imgBx
+{
+	position: relative;
+	width: 250px;
+	height: 200px;
+	background: #000;
+}
+
+
+.card .imgBx img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.content
+{
+	position: relative;
+	width: 250px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card .content div{
+	padding: 20px;
+	text-align: center;
+}
+
+@media (max-width: 1000px)
+{
+	.container {
+		grid-template-columns: repeat(auto-fit, minmax(100%,1fr));
+		margin: 50px;
+	}
+	.card {
+		flex-direction: row;
+		margin: 10px 0;
+	}
+	.card:nth-child(even)
+	{
+		flex-direction: row-reverse;
+	}
+	.card .imgBx
+	.card .content
+	{
+		width: 50%;
+	}
+}
+@media (max-width: 600px)
+{
+	.card 
+	{
+		flex-direction: column;
+		margin: 10px 0;
+	}
+	.card:nth-child(even)
+	{
+		flex-direction: column;
+	}
+	.card .imgBx
+	.card .content
+	{
+		width: 100%;
+	}
+	.card .content
+	{
+		height: 200px;
+	}
+}
